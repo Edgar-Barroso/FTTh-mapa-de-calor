@@ -5,13 +5,12 @@ import simplekml
 import math
 from polycircles import polycircles
 
-sys.path.insert(0, 'H:\Meu Drive\Python\Dev_FTTh\Objetos_Globais')
 
 from ponto import Poste
 
 
 
-postes=Poste.extrair_postes('Entrada/Postes.kmz')
+postes=Poste.extrair_postes('Postes.kmz')
 maior = 0
 
 kml = simplekml.Kml()
@@ -33,7 +32,7 @@ for c in postes:
         pol = kml.newpolygon(name=f"",outerboundaryis=polycircle.to_kml())
         pol.style.polystyle.color = "CC0000FF"
         pol.style.linestyle.width = 0
-kml.save('Saída/mapa.kmz')
+kml.save('mapa.kmz')
 
 
 
